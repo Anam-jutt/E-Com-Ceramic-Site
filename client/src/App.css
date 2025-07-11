@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+body {
+  font-family: 'Playfair Display', serif;
+
+}
+
+.siteBColor {
+  background-color: #025048; 
+}
+.siteTColor{
+  color: #025048;
+}
+.transition-opacity {
+  transition: opacity 0.5s ease-in-out;
+}
