@@ -13,53 +13,40 @@ const useCartStore = create((set, get) => ({
     }
   },
 
-  // Add to Cart
- addToCart: (product) => {
-  const existing = get().cart.find(item => item.product._id === product._id);
-
-  if (existing) {
-    set({
-      cart: get().cart.map(item =>
-        item.product._id === product._id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      )
-    });
-  } else {
-    set({
-      cart: [...get().cart, { product, quantity: 1 }]
-    });
-  }
-},
-
-
-  // Remove from Cart
-removeFromCart: (id) => {
-  set({
-    cart: get().cart.filter(item => item.product._id !== id)
-  });
-},
-
-
-  // Decrease Quantity
-  decreaseQuantity: (id) => {
-    const item = get().cart.find(item => item._id === id);
-    if (item.quantity === 1) {
-      get().removeFromCart(id);
-    } else {
-      set({
-        cart: get().cart.map(item =>
-          item._id === id
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-      });
+  addToCart: async (productId) => {
+    try {
+      const res = await api.post("/cart/add", { productId });
+      set({ cart: res.data.products || [] });
+    } catch (err) {
+      console.error("Failed to add to cart", err);
     }
   },
 
-  // Total Price
+  removeFromCart: async (productId) => {
+    try {
+      const res = await api.delete(`/cart/remove/${productId}`);
+      set({ cart: res.data.products || [] });
+    } catch (err) {
+      console.error("Failed to remove from cart", err);
+    }
+  },
+
+decreaseQuantity: async (productId) => {
+  try {
+    const res = await api.post("/cart/decrease", { productId });
+    set({ cart: res.data.products || [] });
+  } catch (err) {
+    console.error("Failed to decrease quantity", err);
+  }
+},
+
   getTotal: () => {
-    return get().cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    return get().cart.reduce(
+      (total, item) =>
+        item.product ? total + item.product.price * item.quantity : total,
+      0
+    );
   }
 }));
+
 export default useCartStore;

@@ -117,10 +117,10 @@ const ContactUs = () => (
           className="w-full p-2 mt-2 bg-white rounded-lg"
           placeholder="Enter Your Message"
         />
-        <input
+        <Link
+          to="/thnx"
           type="submit"
-          className="inline-block bg-[#59a099] px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg md:text-xl rounded border border-white font-bold text-white hover:bg-[#537470] duration-500 cursor-pointer mt-5"
-        />
+          className="inline-block bg-[#59a099] px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg md:text-xl rounded border border-white font-bold text-white hover:bg-[#537470] duration-500 cursor-pointer mt-5" >Submit</Link>
       </div>
     </div>
     <div className="xl:flex siteTColor gap-3 lg:flex md:flex mt-20 px-6 sm:px-12 md:px-20 pb-20 bg-gradient-to-b from-gray-50 to-gray-300 bg-gray-500">

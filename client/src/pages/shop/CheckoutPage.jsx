@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import useCartStore from "../../store/cartStore";
 import { FaShoppingBag } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 const CheckoutPage = () => {
   const { cart, fetchCart } = useCartStore();
 
@@ -71,8 +71,8 @@ const CheckoutPage = () => {
             <div className="md:col-span-2">
               <Link
                 type="submit"
-                to='orderdone'
-                className="w-full bg-emerald-600 duration-500 cursor-pointer text-white font-semibold py-3 rounded-lg hover:bg-emerald-700 transition"
+                to='/orderdone'
+                className="w-full bg-emerald-600 duration-500 cursor-pointer text-white font-semibold py-3 px-4 rounded-lg hover:bg-emerald-700 transition"
               >
                 Place an Order of  $ {totalPrice.toFixed(2)}
               </Link>

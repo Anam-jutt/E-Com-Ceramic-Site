@@ -19,7 +19,7 @@ const ProductDetailPage = () => {
       })
       .then((data) => {
         setProduct(data);
-        setSelectedImage(data.images?.[0]); // set default main image
+        setSelectedImage(data.images?.[0]);
         setLoading(false);
       })
       .catch((err) => {
@@ -144,7 +144,7 @@ const ProductDetailPage = () => {
                 onClick={(e) => {
                   e.preventDefault(); // stops <a> navigation
                   e.stopPropagation(); // stops bubbling to parent <Link>
-                  addToCart(product);
+                  addToCart(product._id);
                 }}
                 className="mt-6 w-full cursor-pointer sm:w-[80%] bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-900 transition duration-200 shadow-lg"
               >

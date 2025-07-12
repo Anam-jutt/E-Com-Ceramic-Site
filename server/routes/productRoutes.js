@@ -3,7 +3,6 @@ const productsRouter = express.Router();
 const { getProductById, createProduct, updateProduct, deleteProduct, getAllProducts, getProductsBySeller } = require('../controllers/productController');
 const { authenticate } = require("../middleware/auth");
 const { authorize } = require("../middleware/auth");
-const Product = require('../models/Product');
 
 // Public routes
 productsRouter.get('/', getAllProducts);

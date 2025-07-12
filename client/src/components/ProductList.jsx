@@ -42,7 +42,7 @@ const ProductsList = () => {
                       onClick={(e) => {
                         e.preventDefault(); // stops <a> navigation
                         e.stopPropagation(); // stops bubbling to parent <Link>
-                        addToCart(product);
+                        addToCart(product._id);
                       }}
                       className="bg-emerald-100 bg-opacity-80 text-2xl px-2 py-1 rounded-full shadow text-emerald-600"
                     >

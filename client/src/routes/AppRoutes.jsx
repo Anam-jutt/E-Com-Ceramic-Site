@@ -22,6 +22,7 @@ import CheckoutPage from "../pages/shop/CheckoutPage";
 import Shop from "../pages/shop/Shop";
 import About from "../pages/shop/About";
 import ContactUs from "../pages/shop/ContactUs";
+import ThnxContacting from "../pages/shop/ThnxContacting";
 
 // Layout
 import Navbar from "../components/Navbar";
@@ -44,6 +45,7 @@ const AppRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
+        <Route path="/thnx" element={<ThnxContacting />} />
 
         {/* Auth Routes */}
         <Route path="/login" element={<Login />} />

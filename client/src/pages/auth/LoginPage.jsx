@@ -29,50 +29,49 @@ const Login = () => {
 
       localStorage.setItem("userId", res.user._id);
 
-      if (res.user.role === "seller") {
-        navigate("/admin/homes");
-      } else {
-        navigate("/");
-      }
+      navigate("/");
     } else {
       alert(res.error || "Login failed");
     }
   };
 
   return (
-    <div className="flex items-center px-6 sm:px-12 md:px-20 lg:px-30 siteTColor justify-center bg-gradient-to-br from-gray-500 via-gray-400 to-gray-500">
+    <div className="min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-20 bg-gradient-to-br from-emerald-300 via-gray-600 to-rose-300">
       <form
         onSubmit={handleSubmit}
-        className="w-full p-8 xl:w-[50%] bg-gray-400/90 mt-14 mb-14 backdrop-blur-md rounded-2xl shadow-2xl space-y-6 border border-white/30"
+        className="w-full max-w-md bg-white/20 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-white/20 animate-fade-in space-y-6"
       >
-        <h2 className="text-3xl font-bold text-center text-gray-800 drop-shadow-sm">
-          Login to Continue
+        <h2 className="text-4xl font-extrabold text-center text-white drop-shadow mb-2">
+          Welcome Back!
         </h2>
+        <p className="text-center text-gray-100 text-sm mb-4">
+          Log in to access your dashboard and continue shopping.
+        </p>
 
-        {/* Email Input */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Email</label>
+        {/* Email */}
+        <div className="space-y-1">
+          <label className="block text-sm text-white font-medium">Email Address</label>
           <input
             type="email"
             name="email"
             value={form.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400 transition"
             placeholder="you@example.com"
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-400 transition"
             required
           />
         </div>
 
-        {/* Password Input */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Password</label>
+        {/* Password */}
+        <div className="space-y-1">
+          <label className="block text-sm text-white font-medium">Password</label>
           <input
             type="password"
             name="password"
             value={form.password}
             onChange={handleChange}
-            className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400 transition"
             placeholder="••••••••"
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-400 transition"
             required
           />
         </div>
@@ -80,19 +79,16 @@ const Login = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-2 cursor-pointer bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition shadow-lg"
+          className="w-full py-3 mt-4 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg shadow-md transition"
         >
-          Login
+          Sign In
         </button>
 
-        {/* Signup Link */}
-        <p className="text-center text-sm text-gray-600">
+        {/* Signup Prompt */}
+        <p className="text-center text-sm text-gray-200 mt-6">
           Don’t have an account?{" "}
-          <Link
-            to="/signup"
-            className="text-rose-500 hover:underline font-medium"
-          >
-            Sign up
+          <Link to="/signup" className="text-gray-800 font-bold underline">
+            Create one now
           </Link>
         </p>
       </form>
