@@ -57,7 +57,7 @@ const ProductDetailPage = () => {
               <img
                 src={selectedImage}
                 alt={product.name}
-                className="rounded-xl shadow-md w-full max-h-[400px] object-cover"
+                className="rounded-xl shadow-md w-full max-h-[40rem] object-cover"
               />
             )}
 

@@ -111,15 +111,15 @@ const SignupPage = () => {
             onChange={handleChange}
             className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 transition"
           >
-            <option value="buyer">Buyer</option>
-            <option value="seller">Seller</option>
+            <option className="w-[80%]" value="buyer">Buyer</option>
+            <option className="w-[80%]" value="seller">Seller</option>
           </select>
         </div>
 
         {/* Submit */}
         <button
           type="submit"
-          className="w-full py-3 mt-4 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg shadow-md transition"
+          className="w-full py-3 mt-4 cursor-pointer bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg shadow-md transition"
         >
           Sign Up
         </button>

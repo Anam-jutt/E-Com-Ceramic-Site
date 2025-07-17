@@ -10,7 +10,8 @@ import {
 import { Link } from "react-router-dom";
 
 const CartPage = () => {
-  const { cart, fetchCart, addToCart, removeFromCart, decreaseQuantity } = useCartStore();
+  const { cart, fetchCart, addToCart, removeFromCart, decreaseQuantity } =
+    useCartStore();
 
   useEffect(() => {
     fetchCart();
@@ -53,68 +54,71 @@ const CartPage = () => {
           <>
             {/* Cart Items */}
             <ul className="space-y-6">
-              {cart.map((item) => (
-                <li
-                  key={item.product?._id || item._id}
-                  className="grid grid-cols-1 sm:grid-cols-[auto_1fr_auto] items-center gap-4 bg-gradient-to-r from-gray-100 via-gray-300 to-gray-400 shadow-md rounded-xl p-6 hover:shadow-xl transition-shadow"
-                >
-                  <img
-                    src={item.product.images?.[0] || "/placeholder.jpg"}
-                    alt={item.product.name}
-                    className="h-28 w-28 object-cover rounded-lg"
-                  />
-                  <div className="flex flex-col space-y-2">
-                    <h2 className="text-lg font-semibold text-gray-800">
-                      {item.product.name}
-                    </h2>
-                    <p className="text-gray-600">
-                      <span className="font-semibold">
-                        {typeof item.product.price === "number"
-                          ? `$${item.product.price.toFixed(2)}`
-                          : "No price"}
+              {cart
+                .filter((item) => item.product !== null)
+                .map((item) => (
+                  <li
+                    key={item.product?._id || item._id}
+                    className="grid grid-cols-1 sm:grid-cols-[auto_1fr_auto] items-center gap-4 bg-gradient-to-r from-gray-100 via-gray-300 to-gray-400 shadow-md rounded-xl p-6 hover:shadow-xl transition-shadow"
+                  >
+                    <img
+                      src={item.product.images?.[0] || "/placeholder.jpg"}
+                      alt={item.product.name}
+                      className="h-28 w-28 object-cover rounded-lg"
+                    />
+                    <div className="flex flex-col space-y-2">
+                      <h2 className="text-lg font-semibold text-gray-800">
+                        {item.product.name}
+                      </h2>
+                      <p className="text-gray-600 font-extrabold text-lg">
+                        <span className="font-bold">
+                          {typeof item.product.price === "number"
+                            ? `$${item.product.price.toFixed(2)}`
+                            : "No price"}
+                        </span>{" "}
+                        × {item.quantity} ={" "}
+                        <span className="font-bold text-gray-900">
+                          {typeof item.product.price === "number"
+                            ? new Intl.NumberFormat("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                              }).format(item.product.price * item.quantity)
+                            : "N/A"}
+                        </span>
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-end gap-2">
+                      <button
+                        onClick={() => decreaseQuantity(item.product._id)}
+                        className="p-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition"
+                      >
+                        <FaMinus />
+                      </button>
+                      <span className="text-xl font-bold   text-gray-800">
+                        {item.quantity}
                       </span>
-                      {" "}× {item.quantity} ={" "}
-                      <span className="font-bold text-gray-900">
-                        {typeof item.product.price === "number"
-                          ? new Intl.NumberFormat("en-US", {
-                              style: "currency",
-                              currency: "USD",
-                            }).format(item.product.price * item.quantity)
-                          : "N/A"}
-                      </span>
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-end gap-2">
-                    <button
-                      onClick={() => decreaseQuantity(item.product._id)}
-                      className="p-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition"
-                    >
-                      <FaMinus />
-                    </button>
-                    <span className="text-lg font-medium text-gray-800">
-                      {item.quantity}
-                    </span>
-                    <button
-                      onClick={() => addToCart(item.product._id)}
-                      className="p-2 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition"
-                    >
-                      <FaPlus />
-                    </button>
-                    <button
-                      onClick={() => removeFromCart(item.product._id)}
-                      className="p-2 text-gray-600 hover:text-rose-500 transition ml-4"
-                    >
-                      <FaTrashAlt />
-                    </button>
-                  </div>
-                </li>
-              ))}
+                      <button
+                        onClick={() => addToCart(item.product._id)}
+                        className="p-2 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition"
+                      >
+                        <FaPlus />
+                      </button>
+                      <button
+                        onClick={() => removeFromCart(item.product._id)}
+                        className="p-2 text-gray-600 hover:text-rose-500 transition ml-4"
+                      >
+                        <FaTrashAlt />
+                      </button>
+                    </div>
+                  </li>
+                ))}
             </ul>
             {/* Summary & Actions */}
             <div className="bg-gray-100/70 rounded-xl shadow-lg p-8 flex flex-col md:flex-row md:justify-between items-center gap-6 mt-8">
               <div className="text-center md:text-left space-y-2">
-                <p className="text-lg text-gray-700">
-                  <span className="font-semibold">Total Items:</span> {totalItems}
+                <p className="font-extrabold text-xl text-gray-700">
+                  <span className="font-semibold">Total Items:</span>{" "}
+                  {totalItems}
                 </p>
                 <p className="text-2xl font-extrabold text-emerald-600">
                   Total: ${totalPrice.toFixed(2)}

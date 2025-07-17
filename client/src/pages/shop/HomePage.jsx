@@ -16,7 +16,7 @@ const HomePage = () => {
     <div className="">
       <div className="flex lg:flex-row md:flex:row sm:flex-row flex-col h-[46.4rem] pt-20 justify-between text-white pb-10 siteBColor px-6 sm:px-12 md:px-20 overflow-hidden">
         {/* Left Side */}
-        <div className="w-full md:w-1/2 md:text-left">
+        <div className="w-full md:w-1/2 md:text-left flex flex-col justify-center h-full">
           <p className="text-xl sm:text-2xl md:text-[24px] mb-2">
             WELCOME TO CERAMIC SHOP
           </p>
@@ -31,7 +31,7 @@ const HomePage = () => {
 
           <div className="mt-8 sm:mt-10 mb-8">
             <Link
-              to="/products"
+              to="/shop"
               className="inline-block bg-[#025048] px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg md:text-xl rounded border border-white font-bold text-white hover:bg-[#033b35] duration-500"
             >
               Shop Now
@@ -179,7 +179,7 @@ const HomePage = () => {
           </p>
           <p className="text-lg md:text-xl">Starting from just $149.00</p>
           <div className=" px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg md:text-xl rounded border border-[#033b35] font-bold inline-block hover:bg-[#033b35c9] cursor-pointer mt-5 hover:text-gray-200 duration-500">
-            <Link to="/products">Shop Now</Link>
+            <Link to="/shop">Shop Now</Link>
           </div>
         </div>
       </div>

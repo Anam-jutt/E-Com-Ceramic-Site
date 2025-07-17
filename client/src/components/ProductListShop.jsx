@@ -14,20 +14,20 @@ const ProductsListShop = () => {
   }, []);
   const { user } = useAuthStore();
   return (
-    <div className="container mx-auto py-8 px-6 sm:px-12 md:px-20">
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="container mx-auto py-8">
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 px-4">
         {products.map((product) => (
           <Link
             key={product._id}
             to={`/product/${product._id}`}
-            className="bg-emerald-50 rounded-2xl shadow-lg hover:shadow-2xlxl hover:shadow-black transition-shadow duration-300 flex flex-col overflow-hidden border border-gray-100 hover:border-primary-500"
+            className="bg-emerald-50 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-black transition-shadow duration-300 flex flex-col overflow-hidden border border-gray-100 hover:border-primary-500"
           >
             <div className="relative aspect-square w-full bg-gray-50 flex items-center justify-center">
               {product.images[0] ? (
                 <img
                   src={product.images[0]}
                   alt={product.name}
-                  className="object-cover w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"
+                  className="object-cover w-full h-90 rounded-2xl hover:scale-105 transition-transform duration-300"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-100 rounded-2xl">

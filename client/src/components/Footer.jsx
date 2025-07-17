@@ -1,7 +1,22 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 function Footer() {
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email.trim()) {
+      alert("Please enter a valid email.");
+      return;
+    }
+    // Proceed with navigation
+    navigate("/thnx");
+  };
+
   return (
     <>
       <hr />
@@ -26,18 +41,18 @@ function Footer() {
             <h3 className="text-lg font-semibold mb-3 text-white">
               Quick Links
             </h3>
-            <a href="/" className="hover:text-emerald-400 transition">
+           <li> <Link href="/" className="hover:text-emerald-400 transition">
               Home
-            </a>
-            <a href="/shop" className="hover:text-emerald-400 transition">
+            </Link></li>
+           <li> <Link href="/shop" className="hover:text-emerald-400 transition">
               Shop
-            </a>
-            <a href="/about" className="hover:text-emerald-400 transition">
+            </Link></li>
+           <li> <Link href="/about" className="hover:text-emerald-400 transition">
               About
-            </a>
-            <a href="/contact" className="hover:text-emerald-400 transition">
+            </Link></li>
+           <li> <Link href="/contact" className="hover:text-emerald-400 transition">
               Contact
-            </a>
+            </Link></li>
           </div>
 
           {/* Subscribe + Social */}
@@ -48,16 +63,22 @@ function Footer() {
             <p className="text-sm text-gray-400 mb-4">
               Subscribe for updates, offers & new collections.
             </p>
-            <form className="flex space-x-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-400 border-gray-500 border-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              />
-              <Link to='/thnx' className="bg-emerald-500 hover:bg-emerald-600 rounded text-white transition px-4 py-2">
-                Subscribe
-              </Link>
-            </form>
+            <form onSubmit={handleSubmit} className="flex space-x-2">
+      <input
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Your email"
+        className="px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-400 border-gray-500 border-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+      />
+      <button
+        type="submit"
+        className="bg-emerald-500 hover:bg-emerald-600 rounded text-white transition px-4 py-2"
+      >
+        Subscribe
+      </button>
+    </form>
             <div className="flex gap-4 mt-6">
               <Link
                 to="https://facebook.com"

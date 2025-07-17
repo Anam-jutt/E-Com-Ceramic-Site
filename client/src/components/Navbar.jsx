@@ -5,6 +5,7 @@ import { FaCartPlus } from "react-icons/fa";
 import '../index.css';
 import useAuthStore from "../store/useAuthStore";
 import useCartStore from "../store/cartStore";
+import Navlogo from '../assets/mylogo2.png'
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -31,7 +32,8 @@ const Navbar = () => {
     <nav className="bg-[#025048] text-gray-200 shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold hover:scale-105 duration-500">
+        <Link to="/" className="text-2xl font-bold hover:scale-105 duration-500 flex items-center ">
+          <img src={Navlogo} alt="Logo" className="w-12 h-12" />
           Ceramic<span className="text-rose-400">Shop</span>
         </Link>
 
@@ -69,7 +71,7 @@ const Navbar = () => {
               </Link>
             </>
           ) : (
-            <button onClick={() => {logout();}} className="px-4 py-2 cursor-pointer rounded bg-rose-500 hover:bg-rose-600 transition text-white">
+            <button onClick={() => {logout();}} className="px-4 py-2 cursor-pointer rounded bg-gradient-to-tl from-emerald-400 via-gray-500 to-rose-400 hover:scale-110 transition text-white">
               Logout
             </button>
           )}

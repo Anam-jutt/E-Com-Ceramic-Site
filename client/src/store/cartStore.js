@@ -3,7 +3,7 @@ import api from "../services/api";
 
 const useCartStore = create((set, get) => ({
   cart: [],
-  
+  setCart: (cartData) => set({ cart: cartData }),
   fetchCart: async () => {
     try {
       const res = await api.get("/cart");
@@ -31,14 +31,14 @@ const useCartStore = create((set, get) => ({
     }
   },
 
-decreaseQuantity: async (productId) => {
-  try {
-    const res = await api.post("/cart/decrease", { productId });
-    set({ cart: res.data.products || [] });
-  } catch (err) {
-    console.error("Failed to decrease quantity", err);
-  }
-},
+  decreaseQuantity: async (productId) => {
+    try {
+      const res = await api.post("/cart/decrease", { productId });
+      set({ cart: res.data.products || [] });
+    } catch (err) {
+      console.error("Failed to decrease quantity", err);
+    }
+  },
 
   getTotal: () => {
     return get().cart.reduce(
@@ -46,7 +46,7 @@ decreaseQuantity: async (productId) => {
         item.product ? total + item.product.price * item.quantity : total,
       0
     );
-  }
+  },
 }));
 
 export default useCartStore;

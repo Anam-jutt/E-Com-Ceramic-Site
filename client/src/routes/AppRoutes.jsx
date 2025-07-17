@@ -25,8 +25,8 @@ import ContactUs from "../pages/shop/ContactUs";
 import ThnxContacting from "../pages/shop/ThnxContacting";
 
 // Layout
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import MainLayout from "../layouts/MainLayout"; // For Both Nav and Footer
+import MinimalLayout from "../layouts/MinimalLayout"; // Only Nav
 import ScrollToTop from "../components/ScrollToTop";
 
 // Error
@@ -37,15 +37,14 @@ const AppRoutes = () => {
   return (
     <>
       <ScrollToTop />
-      <Navbar />
       <Routes>
+      <Route element={<MainLayout />}>
         {/* Public Routes */}
         <Route path="/" element={ <GuestGuard> <HomePage /> </GuestGuard> }/>
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/product/:id" element={<ProductDetailPage />} />
-        <Route path="/thnx" element={<ThnxContacting />} />
+        <Route path="/shop" element={<GuestGuard> <Shop /> </GuestGuard>} />
+        <Route path="/about" element={ <GuestGuard><About /> </GuestGuard>} />
+        <Route path="/contact" element={<GuestGuard><ContactUs /></GuestGuard>} />
+        <Route path="/product/:id" element={<ProtectedRoute><ProductDetailPage /></ProtectedRoute>} />
 
         {/* Auth Routes */}
         <Route path="/login" element={<Login />} />
@@ -53,20 +52,26 @@ const AppRoutes = () => {
 
         {/* Buyer Protected Routes */}
         <Route path="/cart" element={<ProtectedRoute allowedRoles={["buyer"]}><CartPage /></ProtectedRoute>} />
-        <Route path="/checkout"element={<CheckoutPage /> }/>
-        <Route path="/orderdone" element={  <OrderDonePage />  } />
 
         {/* Seller Protected Routes */}
         <Route path="/admin/products/new" element={ <ProtectedRoute allowedRoles={["seller"]}> <ProductFormPage /> </ProtectedRoute> } />
         <Route path="/admin/products/edit/:id" element={ <ProtectedRoute allowedRoles={["seller"]}> <ProductFormPage />   </ProtectedRoute> } />
-        <Route path="/admin/homes" element={  <HostHomeList /> } />
-        <Route path="/admin/productadded" element={  <ProductAdded /> } />
+        <Route path="/admin/homes" element={ <ProtectedRoute allowedRoles={["seller"]}> <HostHomeList /></ProtectedRoute> } />
 
 
         {/* Fallback */}
         <Route path="*" element={<PageNotFound />} />
+      </Route>
+
+        {/* Routes without Footer */}
+      <Route element={<MinimalLayout />}>
+        <Route path="/checkout" element={<ProtectedRoute><CheckoutPage /></ProtectedRoute>} />
+        <Route path="/orderdone" element={<ProtectedRoute><OrderDonePage /></ProtectedRoute>} />
+        <Route path="/admin/productadded" element={<ProtectedRoute><ProductAdded /></ProtectedRoute>} />
+        <Route path="/thnx" element={<ProtectedRoute><ThnxContacting /></ProtectedRoute>} />
+      </Route>
+
       </Routes>
-      <Footer />
     </>
   );
 };

@@ -17,18 +17,12 @@ const MyListingSection = () => {
       .catch((err) => console.error("Error fetching seller products:", err));
   }, []);
 
-  const handleDelete = async (id) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this product?"
-    );
-    if (!confirmDelete) return;
-
+  const handleDelete = async (productId) => {
     try {
-      await deleteProduct(id);
-      window.location.reload();
+      await deleteProduct(productId);
+      setMyProducts(myProducts.filter((p) => p._id !== productId));
     } catch (err) {
-      console.error("Delete error:", err);
-      alert("Failed to delete product");
+      console.error("Error deleting product:", err);
     }
   };
 
@@ -49,15 +43,16 @@ const MyListingSection = () => {
           {myProducts.map((product) => (
             <div
               key={product._id}
-              className="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition"
+              className="bg-white rounded-2xl shadow-md p-1 hover:shadow-xl transition"
             >
               <Link to={`/product/${product._id}`}>
                 <img
                   src={product.images[0] || "/placeholder.jpg"}
                   alt={product.name}
-                  className="w-full h-48 object-cover rounded-xl mb-4"
+                  className="w-full h-72 object-cover rounded-xl mb-4"
                 />
-                <h3 className="text-lg font-semibold text-gray-800 truncate">
+               <div className="p-2">
+                 <h3 className="text-lg font-semibold text-gray-800 truncate">
                   {product.name}
                 </h3>
                 <p className="text-gray-500 text-sm mb-2 line-clamp-2">
@@ -66,9 +61,10 @@ const MyListingSection = () => {
                 <span className="text-emerald-600 font-bold">
                   ${product.price}
                 </span>
+               </div>
               </Link>
 
-              <div className="flex justify-between items-center mt-4">
+              <div className="flex justify-between items-center p-1">
                 <Link
                   to={`/admin/products/edit/${product._id}`}
                   className="text-lg font-bold bg-gray-200 px-3 py-2 rounded text-blue-600 hover:underline"

@@ -8,7 +8,7 @@ exports.registerUser = async (req, res) => {
     // console.log("Register endpoint hit");
     const { username, email, password, role } = req.body;
     if (!username || !email || !password || !role) {
-      return res.status(400).json({ message: "All fields are required" });
+      return res.status(400).json({ message: "All fields are required"});
     }
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -24,7 +24,7 @@ exports.registerUser = async (req, res) => {
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
-      { expiresIn: "30d" }
+      { expiresIn: "60s" } // epire in 1 min
     );
     res.status(201).json({ token, user });
   } catch (err) {
@@ -47,7 +47,7 @@ exports.loginUser = async (req, res) => {
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
-      { expiresIn: '1d' }
+      { expiresIn: '60s' } // expire in 1 min
     );
 
     res.status(200).json({ token, user });

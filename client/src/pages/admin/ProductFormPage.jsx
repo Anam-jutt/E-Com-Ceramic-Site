@@ -69,7 +69,7 @@ const ProductFormPage = () => {
         "Image upload failed:",
         error.response?.data || error.message
       );
-      alert("Image upload failed");
+      alert("Image upload failed, Please Select 5 Images Onnly!");
     }
   };
 
