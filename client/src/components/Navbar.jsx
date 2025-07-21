@@ -39,22 +39,22 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className={`gap-6 items-center font-sans font-medium ${windowWidth >= 768 ? "flex" : "hidden"}`}>
-          <li><Link to="/" className="hover:text-rose-400 duration-300">Home</Link></li>
-          <li><Link to="/shop" className="hover:text-rose-400 duration-300">Shop</Link></li>
-          <li><Link to="/about" className="hover:text-rose-400 duration-300">About</Link></li>
-          <li><Link to="/contact" className="hover:text-rose-400 duration-300">Contact</Link></li>
+          <li><Link to="/" className="hover:text-rose-400 focus:text-rose-400 focus:font-bold duration-300">Home</Link></li>
+          <li><Link to="/shop" className="hover:text-rose-400 focus:text-rose-400 focus:font-bold duration-300">Shop</Link></li>
+          <li><Link to="/about" className="hover:text-rose-400 focus:text-rose-400 focus:font-bold duration-300">About</Link></li>
+          <li><Link to="/contact" className="hover:text-rose-400 focus:text-rose-400 focus:font-bold duration-300">Contact</Link></li>
 
           {token && role === "seller" && (
             <>
-              <li><Link to="/admin/products/new" className="hover:text-rose-400 duration-300">Add Product</Link></li>
-              <li><Link to="/admin/homes" className="hover:text-rose-400 duration-300">My Listings</Link></li>
+              <li><Link to="/admin/products/new" className="hover:text-rose-400 duration-300 focus:text-rose-400 focus:font-bold">Add Product</Link></li>
+              <li><Link to="/admin/homes" className="hover:text-rose-400 duration-300 focus:text-rose-400 focus:font-bold">My Listings</Link></li>
 
             </>
           )}
 
           {token && role === "buyer" && (
             <>
-              <li><Link to="/cart" className="hover:text-rose-400 duration-300">Cart</Link></li>
+              <li><Link to="/cart" className="hover:text-rose-400 duration-300 focus:text-rose-400 focus:font-bold">Cart</Link></li>
             </>
           )}
         </ul>

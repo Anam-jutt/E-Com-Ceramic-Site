@@ -86,7 +86,7 @@ const About = () => (
         </div>
       </div>
     </div>
-    <div className="siteTColor xl:gap-3 lg:gap-3 md:gap-3 xl:flex lg:flex md:flex px-6 sm:px-12 md:px-20 bg-gradient-to-t from-gray-100 via-gray-200 to-gray-300 pt-16 pb-20">
+    <div className="siteTColor gap-3 xl:flex lg:flex md:flex px-6 sm:px-12 md:px-20 bg-gradient-to-t from-gray-100 via-gray-200 to-gray-300 pt-16 pb-20">
       <div >
         <p className="xl:text-4xl font-black lg:text-3xl md:text-2xl sm:text-xl mt-5 text-xl">Our Vision</p>
         <p className="xl:text-xl lg:text-lg md:text-md sm:text-sm text-sm mt-5">Our vision is to infuse every home with the timeless beauty and functionality of ceramics. We are dedicated to creating elegant, handcrafted ceramic pieces that elevate everyday living, whether it's enjoying a meal, decorating a space, or finding the perfect gift. Our mission is to inspire and bring artistry into daily life, providing a canvas of creativity through ceramics.</p>
