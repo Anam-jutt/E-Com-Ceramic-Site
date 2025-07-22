@@ -63,18 +63,18 @@ function Footer() {
             <p className="text-sm text-gray-400 mb-4">
               Subscribe for updates, offers & new collections.
             </p>
-            <form onSubmit={handleSubmit} className="flex space-x-2">
+            <form onSubmit={handleSubmit} className="xl:flex lg:flex md:flex-col sm:flex flex space-x-2">
       <input
         type="email"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Your email"
-        className="px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-400 border-gray-500 border-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        className="px-3 w-full py-2 mt-2 rounded bg-gray-800 text-white placeholder-gray-400 border-gray-500 border-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
       />
       <button
         type="submit"
-        className="bg-emerald-500 hover:bg-emerald-600 rounded text-white transition px-4 py-2"
+        className="bg-emerald-500 mt-2 hover:bg-emerald-600 rounded text-white transition px-4 py-2"
       >
         Subscribe
       </button>

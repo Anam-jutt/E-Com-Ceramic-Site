@@ -14,7 +14,7 @@ function App() {
       const decoded = jwtDecode(token);
       const expiry = decoded.exp * 1000;
       const timeUntilExpiry = expiry - Date.now();
-
+      // console.log('Time until expiry:', timeUntilExpiry);
       if (timeUntilExpiry <= 0) {
         useAuthStore.getState().logout(true);
       } else {
