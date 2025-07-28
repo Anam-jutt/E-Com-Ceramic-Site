@@ -6,7 +6,7 @@ const Shop = () => {
     <div>
       <div className="px-6 sm:px-12 md:px-20 pt-20 pb-20 siteTColor bg-gray-100">
         <div className="font-black">
-          <p className="font-bold tracking-wider font-sans relative mb-2">
+          <p className="font-bold text tracking-wider font-sans relative mb-2">
             Our Collections
             <span className="block w-26 h-1 bg-rose-400 rounded-full mt-1"></span>
           </p>

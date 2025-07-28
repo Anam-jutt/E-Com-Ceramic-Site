@@ -67,7 +67,7 @@ const ContactUs = () => {
       <div className="siteTColor xl:flex gap-3 lg:flex md:flex mt-20 px-6 sm:px-12 md:px-20 pb-10">
         <div className=" xl:w-1/2 lg:w-1/2 md:w-1/2 sm:w-full w-full">
           <div>
-            <p className="text-2xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl">
+            <p className="text-2xl xl:text-4xl lg:text-3xl text md:text-2xl sm:text-2xl">
               Get in touch
             </p>
             <p className="mt-4 xl:text-xl lg:text-lg md:text-base sm:text-sm">

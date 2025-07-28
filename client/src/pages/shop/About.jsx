@@ -32,7 +32,7 @@ const About = () => (
     </div>
     <div className="px-6 sm:px-12 md:px-20 pt-20 pb-20 siteTColor bg-gray-100">
       <div className="font-black">
-        <p className="font-bold tracking-wider font-sans relative mb-2">
+        <p className="font-bold tracking-wider text font-sans relative mb-2">
           Our Story
           <span className="block w-16 h-1 bg-rose-400 rounded-full mt-1"></span>
         </p>
@@ -62,7 +62,7 @@ const About = () => (
           <img src={image21} className="w-full object-cover h-full" alt="" />
         </div>
         <div className=" xl:w-1/2 lg:w-1/2 md:w-1/2 w-full siteTColor">
-          <p className="font-bold tracking-wider font-sans mt-5 mb-2">
+          <p className="font-bold tracking-wider text font-sans mt-5 mb-2">
             OUR JOURNEY
             <span className="block w-20 h-1 bg-rose-400 rounded-full mt-1"></span>
           </p>

@@ -55,7 +55,7 @@ const HomePage = () => {
       </div>
       <div className="mt-16 px-6 sm:px-12 md:px-20 siteTColor">
         <div className="font-black">
-          <p className="font-bold tracking-wider font-sans relative mb-2">
+          <p className="font-bold tracking-wider text font-sans relative mb-2">
             ABOUT CERAMIC SHOP
             <span className="block w-40 h-1 bg-rose-400 rounded-full mt-1"></span>
           </p>
@@ -97,7 +97,7 @@ const HomePage = () => {
       </div>
       <div className="px-6 sm:px-12 md:px-20 mt-16 bg-[#F1F4F1] xl:flex lg:flex md:flex pt-5 pb-5 siteTColor gap-5">
         <div className="xl:w-1/2 lg:w-1/2 md:w-1/2 pt-20">
-          <p className="font-medium tracking-wider font-sans relative mb-2">
+          <p className="font-medium tracking-wider text font-sans relative mb-2">
             THE BEST OR CERMAICS
             <span className="block w-40 h-1 bg-rose-400 rounded-full mt-1"></span>
           </p>
@@ -155,7 +155,7 @@ const HomePage = () => {
       </div>
       <div className="siteTColor px-6 sm:px-12 md:px-20 pt-20 pb-20 bg-gradient-to-b from-gray-100 via-gray-400 to-gray-500">
         <div className="font-black">
-          <p className="font-bold tracking-wider font-sans relative mb-2">
+          <p className="font-bold tracking-wider text font-sans relative mb-2">
             Most Popular
             <span className="block w-20 h-1 bg-rose-400 rounded-full mt-1"></span>
           </p>
@@ -186,7 +186,7 @@ const HomePage = () => {
       <div>
         <div className="px-6 sm:px-12 md:px-20 pt-20 pb-20 siteTColor">
           <div className="font-black">
-            <p className="font-bold tracking-wider font-sans relative mb-2">
+            <p className="font-bold tracking-wider text font-sans relative mb-2">
               Top Picks
               <span className="block w-16 h-1 bg-rose-400 rounded-full mt-1"></span>
             </p>

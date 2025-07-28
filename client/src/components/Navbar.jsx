@@ -63,7 +63,7 @@ const Navbar = () => {
         <div className={`${windowWidth >= 768 ? "flex" : "hidden"} gap-4 items-center`}>
           {!token ? (
             <>
-              <Link to="/login" className="px-4 py-2 rounded hover:scale-110 background not-[]:transition duration-300">
+              <Link to="/login" className="px-4 py-2 rounded hover:scale-110 background neon1 transition duration-300">
                 Login
               </Link>
               <Link to="/signup" className="px-4 py-2 rounded hover:scale-110 background neon1 transition duration-300">

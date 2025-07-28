@@ -87,8 +87,8 @@ const Login = () => {
         {/* Signup Prompt */}
         <p className="text-center text-sm text-gray-200 mt-6">
           Don’t have an account?{" "}
-          <Link to="/signup" className="neon1 font-bold underline">
-            Create one now
+          <Link to="/signup" className="neon font-bold underline">
+            Create now
           </Link>
         </p>
       </form>
