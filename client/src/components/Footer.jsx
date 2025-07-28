@@ -41,18 +41,33 @@ function Footer() {
             <h3 className="text-lg font-semibold mb-3 text-white">
               Quick Links
             </h3>
-           <li> <Link href="/" className="hover:text-emerald-400 transition">
-              Home
-            </Link></li>
-           <li> <Link href="/shop" className="hover:text-emerald-400 transition">
-              Shop
-            </Link></li>
-           <li> <Link href="/about" className="hover:text-emerald-400 transition">
-              About
-            </Link></li>
-           <li> <Link href="/contact" className="hover:text-emerald-400 transition">
-              Contact
-            </Link></li>
+            <li>
+              {" "}
+              <Link to="/" className="hover:text-emerald-400 transition">
+                Home
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/shop" className="hover:text-emerald-400 transition">
+                Shop
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/about" className="hover:text-emerald-400 transition">
+                About
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                to="/contact"
+                className="hover:text-emerald-400 transition"
+              >
+                Contact
+              </Link>
+            </li>
           </div>
 
           {/* Subscribe + Social */}
@@ -63,22 +78,25 @@ function Footer() {
             <p className="text-sm text-gray-400 mb-4">
               Subscribe for updates, offers & new collections.
             </p>
-            <form onSubmit={handleSubmit} className="xl:flex lg:flex md:flex-col sm:flex flex space-x-2">
-      <input
-        type="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Your email"
-        className="px-3 w-full py-2 mt-2 rounded bg-gray-800 text-white placeholder-gray-400 border-gray-500 border-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-      />
-      <button
-        type="submit"
-        className="bg-emerald-500 mt-2 hover:bg-emerald-600 rounded text-white transition px-4 py-2"
-      >
-        Subscribe
-      </button>
-    </form>
+            <form
+              onSubmit={handleSubmit}
+              className="xl:flex lg:flex md:flex-col sm:flex flex space-x-2"
+            >
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email"
+                className="px-3 w-full py-2 mt-2 rounded bg-gray-800 text-white placeholder-gray-400 border-gray-500 border-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              />
+              <button
+                type="submit"
+                className="bg-emerald-500 mt-2 hover:bg-emerald-600 rounded text-white transition px-4 py-2"
+              >
+                Subscribe
+              </button>
+            </form>
             <div className="flex gap-4 mt-6">
               <Link
                 to="https://facebook.com"

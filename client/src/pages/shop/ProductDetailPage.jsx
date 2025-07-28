@@ -70,7 +70,7 @@ const ProductDetailPage = () => {
                     src={img}
                     alt={`Thumbnail ${idx}`}
                     onClick={() => setSelectedImage(img)}
-                    className={`w-14 h-14 rounded-full cursor-pointer object-cover border-2 ${
+                    className={`w-12 h-12 rounded-full cursor-pointer object-cover border-2 ${
                       selectedImage === img
                         ? "border-gray-800"
                         : "border-gray-300"
