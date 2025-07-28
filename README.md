@@ -7,6 +7,7 @@ A full-stack e-commerce web application for a ceramic products shop, built using
 ## 🚀 Getting Started
 
 ### 📁 Step 1: Start the Frontend (Vite + React)```bash
+
 cd client
 npm install
 npm run dev
@@ -17,19 +18,19 @@ cd client
 npm install
 npm run dev
 
-
-🌐 Access the App
+### 🌐 Access the App
 Once both servers are running, open your browser and go to:
 
-👉 http://localhost:5173
+         http://localhost:5173
 
 
 
-###  Tech Stack
-Frontend: React, Vite, TailwindCSS, Zustand
+## Tech Stack
 
-Backend: Node.js, Express, MongoDB (with Mongoose)
+### Frontend: React, Vite, TailwindCSS, Zustand
 
-Auth: JWT-based role-based authentication
+### Backend: Node.js, Express, MongoDB (with Mongoose)
 
-Features: Seller & Buyer dashboards, Cart, Product CRUD, Image Uploads
+### Auth: JWT-based role-based authentication
+
+### Features: Seller & Buyer dashboards, Cart, Product CRUD, Image Uploads
