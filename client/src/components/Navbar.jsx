@@ -32,9 +32,9 @@ const Navbar = () => {
     <nav className="bg-[#025048] text-gray-200 shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold hover:scale-105 duration-500 flex items-center ">
+        <Link to="/" className="text-2xl font-bold hover:scale-105 duration-500 flex items-center">
           <img src={Navlogo} alt="Logo" className="w-12 h-12" />
-          Ceramic<span className="text-rose-400">Shop</span>
+          Ceramic<span className="text">Shop</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -63,15 +63,15 @@ const Navbar = () => {
         <div className={`${windowWidth >= 768 ? "flex" : "hidden"} gap-4 items-center`}>
           {!token ? (
             <>
-              <Link to="/login" className="px-4 py-2 rounded bg-gradient-to-tl from-emerald-400 via-gray-500 to-rose-400 hover:scale-110 transition duration-300">
+              <Link to="/login" className="px-4 py-2 rounded hover:scale-110 background not-[]:transition duration-300">
                 Login
               </Link>
-              <Link to="/signup" className="px-4 py-2 rounded bg-gradient-to-tl from-emerald-400 via-gray-500 to-rose-400 hover:scale-110 transition duration-300">
+              <Link to="/signup" className="px-4 py-2 rounded hover:scale-110 background neon1 transition duration-300">
                 Sign Up
               </Link>
             </>
           ) : (
-            <button onClick={() => {logout();}} className="px-4 py-2 cursor-pointer rounded bg-gradient-to-tl from-emerald-400 via-gray-500 to-rose-400 hover:scale-110 transition text-white">
+            <button onClick={() => {logout();}} className="px-4 py-2 background cursor-pointer rounded duration-500 hover:scale-110 transition neon">
               Logout
             </button>
           )}

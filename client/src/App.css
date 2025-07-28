@@ -13,3 +13,48 @@ body {
 .transition-opacity {
   transition: opacity 0.5s ease-in-out;
 }
+.neon {
+  color: black;
+  text-shadow: 
+    0 0 10px red,
+    0 0 20px red,
+    0 0 40px red,
+    0 0 80px red;
+}
+.neon1 {
+  color: white;
+  text-shadow: 
+    0 0 10px cyan,
+    0 0 20px cyan,
+    0 0 40px cyan,
+    0 0 80px cyan;
+}
+.text {
+  background: linear-gradient(90deg, #6fd3c3,#e52e71,#347486);
+  background-size: 200%;
+  background-clip: text;
+  color: transparent;
+  animation: text-animation 3s infinite linear;
+}
+@keyframes text-animation {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 200%;
+  }
+}
+.background {
+  background: linear-gradient(90deg, #58f5db, #d17899de, #5dadc4);
+  background-size: 200% 100%;
+  animation: background-animation 3s infinite linear  ;
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
