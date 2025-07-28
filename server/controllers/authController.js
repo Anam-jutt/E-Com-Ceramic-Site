@@ -35,8 +35,13 @@ exports.registerUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
+  const Users = {
+    email:'ali12345@gmail.com',
+    password:'ali12345'
+  }
 
   try {
+
         // console.log("Signup Request Body:", req.body); 
     const user = await User.findOne({ email });
     if (!user) return res.status(400).json({ message: "Invalid credentials or user not found" });

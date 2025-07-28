@@ -17,6 +17,7 @@ const CartPage = () => {
     fetchCart();
   }, [fetchCart]);
 
+  // const totalItems = getTotal();
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const totalPrice = cart.reduce((total, item) => {

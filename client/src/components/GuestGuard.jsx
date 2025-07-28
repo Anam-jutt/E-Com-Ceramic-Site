@@ -16,14 +16,12 @@ const GuestGuard = ({ children }) => {
         navigate("/signup");
       }
     };
-
     document.addEventListener("click", clickHandler);
     return () => {
       clearTimeout(timeout);
       document.removeEventListener("click", clickHandler);
     };
   }, [navigate]);
-
   return <>{children}</>;
 };
 

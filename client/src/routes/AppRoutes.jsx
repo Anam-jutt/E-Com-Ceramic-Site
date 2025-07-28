@@ -7,6 +7,7 @@ import SignupPage from "../pages/auth/SignUpPage";
 // Protected Route
 import ProtectedRoute from "../components/ProtectedRoute";
 import GuestGuard from "../components/GuestGuard";
+import RedirectIfAuthenticated from '../components/RedirectIfAuthenticated'
 
 // Admin Pages
 import ProductFormPage from "../pages/admin/ProductFormPage";
@@ -26,7 +27,7 @@ import ThnxContacting from "../pages/shop/ThnxContacting";
 
 // Layout
 import MainLayout from "../layouts/MainLayout"; // For Both Nav and Footer
-import MinimalLayout from "../layouts/MinimalLayout"; // Only Nav
+import MinimalLayout from "../layouts/MinimalLayout"; // Only For Nav
 import ScrollToTop from "../components/ScrollToTop";
 
 // Error
@@ -38,6 +39,7 @@ const AppRoutes = () => {
     <>
       <ScrollToTop />
       <Routes>
+        {/* Routes with Footer and Nav Layout */}
       <Route element={<MainLayout />}>
         {/* Public Routes */}
         <Route path="/" element={ <GuestGuard> <HomePage /> </GuestGuard> }/>
@@ -47,8 +49,8 @@ const AppRoutes = () => {
         <Route path="/product/:id" element={<ProtectedRoute><ProductDetailPage /></ProtectedRoute>} />
 
         {/* Auth Routes */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<RedirectIfAuthenticated> <Login /></RedirectIfAuthenticated>  } />
+        <Route path="/signup" element={<RedirectIfAuthenticated><SignupPage /></RedirectIfAuthenticated> } />
 
         {/* Buyer Protected Routes */}
         <Route path="/cart" element={<ProtectedRoute allowedRoles={["buyer"]}><CartPage /></ProtectedRoute>} />

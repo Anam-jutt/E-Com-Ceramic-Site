@@ -4,10 +4,10 @@ import AppRoutes from './routes/AppRoutes'
 import { useEffect, useRef } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import useAuthStore from './store/useAuthStore'
-
+import useCartStore from './store/cartStore'
 function App() {
   const logoutTimerRef = useRef(null);
-
+  const fetchCart = useCartStore((state) => state.fetchCart);
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -23,8 +23,9 @@ function App() {
           useAuthStore.getState().logout(true);
         }, timeUntilExpiry);
       }
+        fetchCart();
     }
-  }, []);
+  }, [fetchCart]);
 
   return (
     <div>

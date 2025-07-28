@@ -50,7 +50,7 @@ const RandomProductsSection = () => {
                 <img
                   src={product.images[0]}
                   alt={product.name}
-                  className="object-cover w-[22rem] h-[22rem] rounded-2xl hover:scale-105 transition-transform duration-300"
+                  className="object-cover w-full min-h-[21rem] max-h-[25rem] rounded-2xl hover:scale-105 transition-transform duration-300"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-100 rounded-2xl">

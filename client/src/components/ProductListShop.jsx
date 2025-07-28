@@ -22,12 +22,12 @@ const ProductsListShop = () => {
             to={`/product/${product._id}`}
             className="bg-emerald-50 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-black transition-shadow duration-300 flex flex-col overflow-hidden border border-gray-100 hover:border-primary-500"
           >
-            <div className="relative aspect-square w-full bg-gray-50 flex items-center justify-center">
+            <div className="relative aspect-square w-full bg-gray-300 flex items-center justify-center">
               {product.images[0] ? (
                 <img
                   src={product.images[0]}
                   alt={product.name}
-                  className="object-cover w-full h-90 rounded-2xl hover:scale-105 transition-transform duration-300"
+                  className="object-cover w-full min-h-[21rem] max-h-[25rem] rounded-2xl hover:scale-105 transition-transform duration-300"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-100 rounded-2xl">

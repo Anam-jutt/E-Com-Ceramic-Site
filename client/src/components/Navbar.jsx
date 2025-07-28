@@ -11,7 +11,7 @@ const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const { role, token, logout } = useAuthStore();
   const { cart } = useCartStore();
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   // Toggle menu
   const toggleMenu = () => setMenuOpen(!menuOpen);

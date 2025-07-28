@@ -49,7 +49,7 @@ const MyListingSection = () => {
                 <img
                   src={product.images[0] || "/placeholder.jpg"}
                   alt={product.name}
-                  className="w-full h-72 object-cover rounded-xl mb-4"
+                  className="w-full min-h-[21rem] max-h-[25rem] object-cover rounded-xl mb-4"
                 />
                <div className="p-2">
                  <h3 className="text-lg font-semibold text-gray-800 truncate">

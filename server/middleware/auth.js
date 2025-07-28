@@ -16,7 +16,7 @@ const authenticate = (req, res, next) => {
 const authorize = (roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
-      return res.status(403).json({ error: "Access denied" });
+      return res.status(403).json({ error: "Access denied ◑﹏◐, Try Again Later" });
     }
     next();
   };
