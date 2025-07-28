@@ -6,7 +6,7 @@ A full-stack e-commerce web application for a ceramic products shop, built using
 
 ## 🚀 Getting Started
 
-### 📁 Step 1: Start the Frontend (Vite + React)```bash
+###  Step 1: Start the Frontend (Vite + React)```bash
 
 cd client
 npm install
