@@ -153,7 +153,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="siteTColor px-6 sm:px-12 md:px-20 pt-20 pb-20 bg-gradient-to-b from-gray-100 via-gray-400 to-gray-500">
+      <div className="siteTColor px-6 sm:px-12 md:px-20 pt-16 pb-20 bg-gradient-to-b from-gray-100 via-gray-400 to-gray-500">
         <div className="font-black">
           <p className="font-bold tracking-wider text font-sans relative mb-2">
             Most Popular
@@ -184,7 +184,7 @@ const HomePage = () => {
         </div>
       </div>
       <div>
-        <div className="px-6 sm:px-12 md:px-20 pt-20 pb-20 siteTColor">
+        <div className="px-6 sm:px-12 md:px-20 pt-16 pb-20 siteTColor">
           <div className="font-black">
             <p className="font-bold tracking-wider text font-sans relative mb-2">
               Top Picks
