@@ -61,7 +61,7 @@ const HomePage = () => {
           </p>
         </div>
         <div className=" mt-4">
-          <p className="text-lg sm:text-2xl md:text-4xl lg:text-5xl mx-auto">
+          <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl mx-auto">
             The versatility of ceramics is what makes them truly remarkable,
             with their presence in various forms such as{" "}
             <span className="font-semibold text-[#025048]">stoneware</span> and{" "}
@@ -69,7 +69,7 @@ const HomePage = () => {
           </p>
         </div>
       </div>
-      <div className="mt-3 px-6 sm:px-12 md:px-20 xl:flex lg:flex md:flex gap-3">
+      <div className="mt-6 px-6 sm:px-12 md:px-20 xl:flex lg:flex md:flex gap-3">
         <div className="xl:w-1/2 md:w-1/2">
           <img
             src={image3}
