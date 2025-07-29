@@ -8,20 +8,20 @@ const Shop = () => {
         <div className="font-black">
           <p className="font-bold text tracking-wider font-sans relative mb-2">
             Our Collections
-            <span className="block w-26 h-1 bg-rose-400 rounded-full mt-1"></span>
+            <span className="block w-32 h-1 bg-rose-400 rounded-full mt-1"></span>
           </p>
         </div>
         <div className=" mt-4 flex">
-          <p className="text-lg sm:text-xl md:text-3xl font-extrabold lg:text-4xl mx-auto text-[#033b3596] w-[30%]">
+          <p className="text-lg sm:text-xl md:text-3xl font-extrabold lg:text-4xl mx-auto text-[#033b3596] w-[50%]">
             Shop Our Bestselling Ceramic Art Pieces
           </p>
-          <p className="w-[60%] border-l-8 border-[#033b3543] pl-4 text-lg sm:text-xl md:text-3xl lg:text-4xl">
+          <p className="w-[50%] border-l-8 border-[#033b3543] pl-4 text-lg sm:text-xl md:text-3xl lg:text-4xl">
             Discover handcrafted ceramic pieces that blend elegance, durability,
             and timeless design — perfect for any space or occasion.
           </p>
         </div>
       </div>
-      <div className="pb-20 bg-gradient-to-b from-gray-100 via-gray-400 to-gray-600">
+      <div className="pb-20 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300">
         <ProductsListShop />
       </div>
     </div>

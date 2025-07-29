@@ -21,7 +21,7 @@ const ProductsList = () => {
           <Link
             key={product._id}
             to={`/product/${product._id}`}
-            className="bg-emerald-50 rounded-2xl shadow-lg hover:shadow-2xlxl hover:shadow-black transition-shadow duration-300 flex flex-col overflow-hidden border border-gray-100 hover:border-primary-500"
+            className="bg-emerald-50 rounded-2xl shadow-lg hover:shadow-lg hover:shadow-black transition-shadow duration-300 flex flex-col overflow-hidden border border-gray-100 hover:border-primary-500"
           >
             <div className="relative aspect-square w-full bg-gray-50 flex items-center justify-center">
               {product.images[0] ? (

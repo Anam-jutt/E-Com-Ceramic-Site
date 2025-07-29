@@ -43,13 +43,13 @@ const MyListingSection = () => {
           {myProducts.map((product) => (
             <div
               key={product._id}
-              className="bg-white rounded-2xl shadow-md p-1 hover:shadow-xl transition"
+              className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden"
             >
               <Link to={`/product/${product._id}`}>
                 <img
                   src={product.images[0] || "/placeholder.jpg"}
                   alt={product.name}
-                  className="w-full min-h-[21rem] max-h-[25rem] object-cover rounded-xl mb-4"
+                  className="w-full min-h-[21rem] max-h-[25rem] hover:scale-105 duration-500 object-cover rounded-xl mb-4"
                 />
                <div className="p-2">
                  <h3 className="text-lg font-semibold text-gray-800 truncate">
@@ -58,22 +58,22 @@ const MyListingSection = () => {
                 <p className="text-gray-500 text-sm mb-2 line-clamp-2">
                   {product.about}
                 </p>
-                <span className="text-emerald-600 font-bold">
+                <span className="text-emerald-600 font-bold text-2xl">
                   ${product.price}
                 </span>
                </div>
               </Link>
 
-              <div className="flex justify-between items-center p-1">
+              <div className="flex justify-between items-center p-3 mt-5">
                 <Link
                   to={`/admin/products/edit/${product._id}`}
-                  className="text-lg font-bold bg-gray-200 px-3 py-2 rounded text-blue-600 hover:underline"
+                  className="text-lg bg-gray-200 font-sans px-2 rounded text-blue-600 hover:underline"
                 >
                   Edit
                 </Link>
                 <button
                   onClick={() => handleDelete(product._id)}
-                  className="text-lg font-bold bg-gray-200 px-3 cursor-pointer py-2 rounded text-red-600 hover:underline"
+                  className="text-lg bg-gray-200 px-2 font-sans cursor-pointer rounded text-red-600 hover:underline"
                 >
                   Delete
                 </button>

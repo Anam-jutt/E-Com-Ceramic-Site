@@ -20,10 +20,10 @@ function Footer() {
   return (
     <>
       <hr />
-      <footer className="bg-gray-800 text-gray-100 py-10 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pt-10">
+      <footer className="relative clip-triangle bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-200 px-6 md:px-16 py-16 shadow-inner z-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pt-10  ">
           {/* Brand */}
-          <div className="">
+          <div className="w-[80%]">
             <Link
               to="/"
               className="text-2xl font-bold hover:scale-105 duration-500 "
@@ -37,25 +37,25 @@ function Footer() {
           </div>
 
           {/* Navigation */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 w-[80%] xl:ml-16 md:ml-8">
             <h3 className="text-lg font-semibold mb-3 text-white">
               Quick Links
             </h3>
             <li>
               {" "}
-              <Link to="/" className="hover:text-emerald-400 transition">
+              <Link to="/" className="hover:text-rose-400 transition">
                 Home
               </Link>
             </li>
             <li>
               {" "}
-              <Link to="/shop" className="hover:text-emerald-400 transition">
+              <Link to="/shop" className="hover:text-rose-400 transition">
                 Shop
               </Link>
             </li>
             <li>
               {" "}
-              <Link to="/about" className="hover:text-emerald-400 transition">
+              <Link to="/about" className="hover:text-rose-400 transition">
                 About
               </Link>
             </li>
@@ -63,7 +63,7 @@ function Footer() {
               {" "}
               <Link
                 to="/contact"
-                className="hover:text-emerald-400 transition"
+                className="hover:text-rose-400 transition"
               >
                 Contact
               </Link>
@@ -71,7 +71,7 @@ function Footer() {
           </div>
 
           {/* Subscribe + Social */}
-          <div className="">
+          <div className="w-[80%]">
             <h3 className="text-lg font-semibold mb-3 text-white">
               Stay Connected
             </h3>
@@ -92,7 +92,7 @@ function Footer() {
               />
               <button
                 type="submit"
-                className="bg-emerald-500 mt-2 hover:bg-emerald-600 rounded text-white transition px-4 py-2"
+                className="bg-rose-400 mt-2 cursor-pointer rounded text-white transition px-4 py-2"
               >
                 Subscribe
               </button>
@@ -101,7 +101,7 @@ function Footer() {
               <Link
                 to="https://facebook.com"
                 aria-label="Facebook"
-                className="hover:text-emerald-400 transition text-lg"
+                className="hover:text-rose-400 transition text-lg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -110,7 +110,7 @@ function Footer() {
               <Link
                 to="https://instagram.com"
                 aria-label="Instagram"
-                className="hover:text-emerald-400 transition text-lg"
+                className="hover:text-rose-400 transition text-lg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -119,7 +119,7 @@ function Footer() {
               <Link
                 to="https://twitter.com"
                 aria-label="Twitter"
-                className="hover:text-emerald-400 transition text-lg"
+                className="hover:text-rose-400 transition text-lg"
                 target="_blank"
                 rel="noopener noreferrer"
               >

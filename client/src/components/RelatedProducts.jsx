@@ -30,10 +30,10 @@ const RandomProductsSection = () => {
   return (
     <div className="container mx-auto py-12 px-4">
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-200 mb-2">
+        <h2 className="text-3xl font-bold text-gray-500 mb-2">
           You Might Also Like
         </h2>
-        <p className="text-gray-200 text-lg">
+        <p className="text-gray-400 text-lg">
           Discover some more items we think you’ll love
         </p>
       </div>

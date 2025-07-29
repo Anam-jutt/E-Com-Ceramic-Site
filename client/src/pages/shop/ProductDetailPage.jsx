@@ -37,129 +37,124 @@ const ProductDetailPage = () => {
     );
 
   return (
-    <div className="bg-gradient-to-br from-gray-500 via-gray-400 to-gray-500 px-6 sm:px-12 md:px-20 py-10">
-      <div className="mx-auto bg-gray-300/90 backdrop-blur rounded-2xl shadow-xl px-4 sm:px-8 md:px-10 py-10">
-        {/* Top Hero Text */}
-        <div className="mb-10 text-center">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-800 mb-2">
-            Explore Product Details
-          </h1>
-          <p className="text-gray-700 text-base sm:text-lg">
-            Get all the information you need before adding it to your cart
-          </p>
-        </div>
+   <div className="px-4 sm:px-8 md:px-16 py-12"><hr />
+  <div className="max-w-7xl mx-auto rounded-2xl overflow-hidden">
+    {/* Hero Section */}
+    <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 p-10">
+      {/* Product Images */}
+      <div className="w-full">
+        {/* Main Image */}
+        {selectedImage && (
+          <img
+            src={selectedImage}
+            alt={product.name}
+            className="rounded-xl shadow-md w-full h-[400px] sm:h-[500px] object-contain"
+          />
+        )}
 
-        {/* Product Layout */}
-        <div className="flex xl:flex-row flex-col gap-10 items-start">
-          {/* Image Section */}
-          <div className="w-full xl:w-1/2">
-            {selectedImage && (
+        {/* Thumbnail Gallery */}
+        {product.images?.length > 1 && (
+          <div className="flex gap-3 mt-4 flex-wrap">
+            {product.images.map((img, idx) => (
               <img
-                src={selectedImage}
-                alt={product.name}
-                className="rounded-xl shadow-md w-full max-h-[40rem] object-cover"
+                key={idx}
+                src={img}
+                alt={`Thumbnail ${idx}`}
+                onClick={() => setSelectedImage(img)}
+                className={`w-14 h-14 rounded-lg border-2 object-cover cursor-pointer transition duration-200 hover:scale-105 ${
+                  selectedImage === img ? "border-gray-800" : "border-gray-300"
+                }`}
               />
-            )}
-
-            {/* Thumbnail Gallery */}
-            {product.images?.length > 1 && (
-              <div className="flex gap-3 mt-4 flex-wrap">
-                {product.images.map((img, idx) => (
-                  <img
-                    key={idx}
-                    src={img}
-                    alt={`Thumbnail ${idx}`}
-                    onClick={() => setSelectedImage(img)}
-                    className={`w-12 h-12 rounded-full cursor-pointer object-cover border-2 ${
-                      selectedImage === img
-                        ? "border-gray-800"
-                        : "border-gray-300"
-                    }`}
-                  />
-                ))}
-              </div>
-            )}
+            ))}
           </div>
-
-          {/* Info Section */}
-          <div className="w-full xl:w-1/2">
-            <div className="p-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-                {product.name}
-              </h2>
-              <p className="text-gray-700 text-base sm:text-lg mb-6 break-words whitespace-pre-wrap">
-                {product.about}
-              </p>
-
-              <p className="text-xl font-semibold text-gray-800 mb-2">
-                Price: ${product.price}
-              </p>
-              <p className="text-sm text-gray-600 mb-1">
-                Rating: ⭐ {product.rating || 0}
-              </p>
-              <p className="text-sm text-gray-600 mb-4">
-                Stock: {product.stock}
-              </p>
-            </div>
-
-            {/* Sizes */}
-            {product.sizes?.length > 0 && (
-              <div className="mb-4">
-                <span className="text-sm font-medium text-gray-700">
-                  Available Sizes:
-                </span>
-                <div className="flex flex-wrap gap-2 mt-1">
-                  {product.sizes.map((size, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full"
-                    >
-                      {size}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Colors */}
-            {product.colors?.length > 0 && (
-              <div className="mb-4">
-                <span className="text-sm font-medium text-gray-700">
-                  Available Colors:
-                </span>
-                <div className="flex flex-wrap gap-2 mt-1">
-                  {product.colors.map((color, idx) => (
-                    <span
-                      key={idx}
-                      className="w-5 h-5 rounded-full border border-gray-300"
-                      style={{ backgroundColor: color.toLowerCase() }}
-                      title={color}
-                    ></span>
-                  ))}
-                </div>
-              </div>
-            )}
-            {user?.role === "buyer" && (
-              <button
-                onClick={(e) => {
-                  e.preventDefault(); // stops <a> navigation
-                  e.stopPropagation(); // stops bubbling to parent <Link>
-                  addToCart(product._id);
-                }}
-                className="mt-6 w-full cursor-pointer sm:w-[80%] bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-900 transition duration-200 shadow-lg"
-              >
-                Add to Cart
-              </button>
-            )}
-          </div>
-        </div>
+        )}
       </div>
 
-      {/* Related Products Section */}
-      <div className="mt-10">
-        <RelatedProducts />
+      {/* Product Info */}
+      <div className="flex flex-col justify-between">
+        {/* Product Title & Price */}
+        <div>
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+            {product.name}
+          </h1>
+          <p className="text-lg text-gray-600 mb-6 whitespace-pre-wrap">
+            {product.about}
+          </p>
+          <div className="text-2xl font-bold text-gray-800 mb-2">
+            ${product.price}
+          </div>
+          <div className="text-sm text-yellow-600 font-medium mb-1">
+            ⭐ {product.rating || 0} / 5
+          </div>
+          <div className="text-sm text-gray-500 mb-4">
+            {product.stock > 0 ? `In Stock: ${product.stock}` : "Out of Stock"}
+          </div>
+        </div>
+
+        {/* Sizes */}
+        {product.sizes?.length > 0 && (
+          <div className="mb-4">
+            <span className="block text-sm font-medium text-gray-700 mb-1">
+              Available Sizes:
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {product.sizes.map((size, idx) => (
+                <span
+                  key={idx}
+                  className="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full border border-gray-300"
+                >
+                  {size}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Colors */}
+        {product.colors?.length > 0 && (
+          <div className="mb-6">
+            <span className="block text-sm font-medium text-gray-700 mb-1">
+              Available Colors:
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {product.colors.map((color, idx) => (
+                <span
+                  key={idx}
+                  className="w-6 h-6 rounded-full border border-gray-400"
+                  style={{ backgroundColor: color.toLowerCase() }}
+                  title={color}
+                ></span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Add to Cart Button */}
+        {user?.role === "buyer" && (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              addToCart(product._id);
+            }}
+            className="mt-4 w-full sm:w-3/4 bg-black text-white py-3 rounded-xl text-lg hover:bg-gray-900 transition duration-300 shadow-lg"
+          >
+            🛒 Add to Cart
+          </button>
+        )}
       </div>
     </div>
+
+    {/* Related Products */}
+    <div className="border-t mt-6">
+      <h2 className="text-xl font-semibold mb-4 mt-5 text-gray-800">
+        Related Products
+      </h2>
+      <RelatedProducts />
+    </div>
+  </div>
+</div>
+
   );
 };
 

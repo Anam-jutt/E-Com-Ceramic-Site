@@ -40,6 +40,7 @@ const useCartStore = create((set, get) => ({
     }
   },
 
+    cartItems: () => get().cart.filter((item) => item?.product),
   getTotal: () => {
     return get().cart.reduce(
       (total, item) =>
