@@ -12,4 +12,6 @@ This is the backend for an e-commerce project built with:
 
 1. Install dependencies  
 ```bash
+cd server
 npm install
+npm run dev

@@ -20,7 +20,7 @@ function Footer() {
   return (
     <>
       <hr />
-      <footer className="relative clip-triangle bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-200 px-6 md:px-16 py-16 shadow-inner z-10">
+      <footer className="relative clip-triangle bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-200 shadow-inner z-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pt-10  ">
           {/* Brand */}
           <div className="w-[80%]">
@@ -129,7 +129,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t text-center border-gray-200 pt-4  text-xs text-gray-300 font-extrabold">
+        <div className="mt-10 border-t text-center border-gray-200 pt-3 pb-3 text-xs text-gray-300 font-extrabold">
           &copy; {new Date().getFullYear()} CeramicShop. All rights reserved.
         </div>
       </footer>

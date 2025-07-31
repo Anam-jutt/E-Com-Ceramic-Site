@@ -60,7 +60,6 @@ const AppRoutes = () => {
         <Route path="/admin/products/edit/:id" element={ <ProtectedRoute allowedRoles={["seller"]}> <ProductFormPage />   </ProtectedRoute> } />
         <Route path="/admin/homes" element={ <ProtectedRoute allowedRoles={["seller"]}> <HostHomeList /></ProtectedRoute> } />
 
-
         {/* Fallback */}
         <Route path="*" element={<PageNotFound />} />
       </Route>

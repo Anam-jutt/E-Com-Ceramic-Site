@@ -14,7 +14,7 @@ const ProductsListShop = () => {
   }, []);
   const { user } = useAuthStore();
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto">
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 px-4">
         {products.map((product) => (
           <Link

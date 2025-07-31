@@ -40,7 +40,7 @@ const HomePage = () => {
         </div>
 
         {/* Right Side */}
-        <div className="w-full overflow-hidden md:w-1/2 flex justify-center md:justify-end items-center relative ">
+        <div className="w-full h-[93%] overflow-hidden md:w-1/2 flex justify-center md:justify-end items-center relative ">
           <img
             src={image1}
             alt="main product"
@@ -55,12 +55,12 @@ const HomePage = () => {
       </div>
       <div className="mt-16 px-6 sm:px-12 md:px-20 siteTColor">
         <div className="font-black">
-          <p className="font-bold tracking-wider text font-sans relative mb-2">
+          <p className="font-bold tracking-wider text font-sans relative">
             ABOUT CERAMIC SHOP
-            <span className="block w-46 h-1 bg-rose-400 rounded-full mt-1"></span>
+            <span className="block w-46 h-[1px] bg-rose-400 mt-1"></span>
           </p>
         </div>
-        <div className="mt-8">
+        <div className="mt-1">
           <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl mx-auto">
             The versatility of ceramics is what makes them truly remarkable,
             with their presence in various forms such as{" "}
@@ -97,11 +97,11 @@ const HomePage = () => {
       </div>
       <div className="px-6 sm:px-12 md:px-20 mt-16 bg-[#F1F4F1] xl:flex lg:flex md:flex pt-5 pb-5 siteTColor gap-16">
         <div className="xl:w-1/2 lg:w-1/2 md:w-1/2 pt-20">
-          <p className="font-medium tracking-wider text font-sans relative mb-8">
+          <p className="font-medium tracking-wider text font-sans relative">
             THE BEST OR CERMAICS
-            <span className="block w-46 h-1 bg-rose-400 rounded-full mt-1"></span>
+            <span className="block w-46 h-[1px] bg-rose-400 mt-1"></span>
           </p>
-          <div className="text-2xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl mb-4">
+          <div className="text-2xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl mb-4 mt-1">
             <p>Our Products Category</p>
           </div>
           <div className="text-md xl:text-xl lg:text-xl md:text-lg sm:text-md mt-3">
@@ -124,11 +124,11 @@ const HomePage = () => {
             </div>
           </div>
           <div className=" mt-14">
-            <p className="font-medium tracking-wider text font-sans relative mb-8">
+            <p className="font-medium tracking-wider text font-sans relative">
               THE BEST OR CERMAICS
-              <span className="block w-46 h-1 bg-rose-400 rounded-full mt-1"></span>
+              <span className="block w-46 h-[1px] bg-rose-400 mt-1"></span>
             </p>
-            <div className="text-2xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl mb-3">
+            <div className="text-2xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl mb-3 mt-1">
               <p>Our Products Quality</p>
             </div>
             <div className="text-md xl:text-xl lg:text-xl md:text-lg sm:text-md mt-3">
@@ -177,12 +177,12 @@ const HomePage = () => {
       </div>
       <div className="siteTColor px-6 sm:px-12 md:px-20 pt-16 pb-20 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300">
         <div className="font-black">
-          <p className="font-bold tracking-wider text font-sans relative mb-2">
+          <p className="font-bold tracking-wider text font-sans relative">
             Most Popular
-            <span className="block w-26 h-1 bg-rose-400 rounded-full mt-1"></span>
+            <span className="block w-46 h-[1px] bg-rose-400 mt-1"></span>
           </p>
         </div>
-        <div className=" mt-10">
+        <div className=" mt-1">
           <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl mx-auto">
             Discover the Latest Additions at Your Top Choice Flower Shop
           </p>
@@ -195,7 +195,7 @@ const HomePage = () => {
         className="bg-cover bg-center bg-no-repeat bg-fixed min-h-[30rem] flex items-center justify-center "
         style={{ backgroundImage: `url(${image14})` }}
       >
-        <div className="text-center bg-opacity-50 px-6 py-14 siteTColor lg:w-[50%] md:w-[60%] sm-w[80%] w-[80%] backdrop-blur-3xl backdrop-brightness-200 rounded-4xl from-gray-100 site via-gray-200 to-gray-300">
+        <div className="text-center bg-opacity-50/60 px-6 py-14 siteTColor lg:w-[50%] md:w-[60%] sm-w[80%] w-[80%] backdrop-blur-3xl backdrop-brightness-200 rounded-4xl from-gray-100 site via-gray-200 to-gray-300">
           <p className="text-2xl md:text-3xl font-semibold mb-4">
             Begin Your Ceramic Journey — Explore Our Stunning Collections
           </p>
@@ -208,16 +208,16 @@ const HomePage = () => {
       <div>
         <div className="px-6 sm:px-12 md:px-20 pt-16 pb-20 siteTColor">
           <div className="font-black">
-            <p className="font-bold tracking-wider text font-sans relative mb-2">
+            <p className="font-bold tracking-wider text font-sans relative">
               Top Picks
-              <span className="block w-20 h-1 bg-rose-400 rounded-full mt-1"></span>
+              <span className="block w-46 h-[1px] bg-rose-400 mt-1"></span>
             </p>
           </div>
-          <div className=" mt-4 flex">
-            <p className="text-lg sm:text-xl md:text-3xl font-extrabold lg:text-4xl mx-auto text-[#033b3596] w-[50%]">
+          <div className=" mt-1 flex">
+            <p className="text-lg sm:text-xl md:text-3xl text-justify pr-2 font-extrabold lg:text-4xl mx-auto text-[#033b3596] w-[50%]">
               Shop Our Bestselling Ceramic Art Pieces
             </p>
-            <p className="w-[50%] border-l-8 border-[#033b3543] pl-4 text-lg sm:text-xl md:text-3xl lg:text-4xl">
+            <p className="w-[50%] border-l-4 border-[#033b3543] pl-4 text-lg sm:text-xl md:text-3xl lg:text-4xl">
               Loved by hundreds for their elegance, texture, and lasting charm.
             </p>
           </div>

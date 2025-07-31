@@ -103,7 +103,7 @@ const Navbar = () => {
             </>
           )}
 
-          {token && role === "buyer" && (
+          {/* {token && role === "buyer" && (
             <>
               <li>
                 <Link
@@ -114,15 +114,43 @@ const Navbar = () => {
                 </Link>
               </li>
             </>
-          )}
+          )} */}
         </ul>
 
         {/* Desktop Buttons */}
         <div
           className={`${
             windowWidth >= 768 ? "flex" : "hidden"
-          } gap-4 items-center`}
+          } gap-7 items-center`}
         >
+             {token && role === "buyer" && (
+            <>
+             <li style={{listStyle:"none"}}>
+                <Link
+                  to="/cart"
+                  className="hover:scale-110 focus:font-bold"
+                >
+                 View Cart
+                </Link>
+              </li>
+              {/* Cart Icon */}
+              <button
+                onClick={() => setDrawerOpen(true)}
+                className="text-2xl flex gap-1 cursor-pointer  items-center hover:scale-110 transition duration-300 relative"
+              >
+                <FaCartPlus />
+                <sup className="text-lg absolute font-bold -top-3 -right-6 text-white rounded-full px-1">
+                  {totalItems}
+                </sup>
+              </button>
+             
+              {/* Drawer Component */}
+              <CartDrawer
+                isOpen={drawerOpen}
+                onClose={() => setDrawerOpen(false)}
+              />
+            </>
+          )}
           {!token ? (
             <>
               <Link
@@ -149,26 +177,7 @@ const Navbar = () => {
             </button>
           )}
 
-          {token && role === "buyer" && (
-            <>
-              {/* Cart Icon */}
-              <button
-                onClick={() => setDrawerOpen(true)}
-                className="text-2xl flex gap-1 cursor-pointer  items-center hover:scale-110 transition duration-300 relative"
-              >
-                <FaCartPlus />
-                <sup className="text-lg absolute font-bold -top-3 -right-6 text-white rounded-full px-1">
-                  {totalItems}
-                </sup>
-              </button>
-
-              {/* Drawer Component */}
-              <CartDrawer
-                isOpen={drawerOpen}
-                onClose={() => setDrawerOpen(false)}
-              />
-            </>
-          )}
+       
         </div>
 
         {/* Mobile Menu Button */}

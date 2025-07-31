@@ -37,8 +37,8 @@ const ContactUs = () => {
   };
   return (
     <div>
-      <div className="flex lg:flex-row md:flex:row sm:flex-row flex-col h-auto pt-20 justify-between text-white pb-10 siteBColor px-6 sm:px-12 md:px-20 overflow-hidden">
-        <div className="w-full md:w-1/2 md:text-left mt-20">
+      <div className="flex lg:flex-row md:flex:row sm:flex-row flex-col h-screen pt-10 justify-between text-white pb-10 siteBColor px-6 sm:px-12 md:px-20 overflow-hidden">
+        <div className="w-full md:w-1/2 md:text-left xl:mt-20">
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-playfair font-medium leading-tight sm:leading-[65px] md:leading-[75px] lg:leading-[83px]">
             Contact Us
           </h1>
@@ -56,7 +56,7 @@ const ContactUs = () => {
             </Link>
           </div>
         </div>
-        <div className="xl:w-[35rem] lg:w-[30rem] md:w-[25rem] sm:w-full w-full">
+        <div className="xl:w-[35rem] h-[93%] lg:w-[30rem] md:w-[25rem] sm:w-full w-full">
           <img
             src={image13}
             className="w-full h-full object-cover rounded"
@@ -64,7 +64,7 @@ const ContactUs = () => {
           />
         </div>
       </div>
-      <div className="siteTColor xl:flex gap-3 lg:flex md:flex mt-20 px-6 sm:px-12 md:px-20 pb-10">
+      <div className="siteTColor xl:flex gap-10 lg:flex md:flex mt-20 px-6 sm:px-12 md:px-20 pb-10">
         <div className=" xl:w-1/2 lg:w-1/2 md:w-1/2 sm:w-full w-full">
           <div>
             <p className="text-2xl xl:text-4xl lg:text-3xl text md:text-2xl sm:text-2xl">
