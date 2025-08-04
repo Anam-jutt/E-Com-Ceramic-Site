@@ -12,7 +12,7 @@ exports.registerUser = async (req, res) => {
     }
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ message: "Email already in use" });
+      return res.status(400).json({ message: "Email already in use Go to login" });
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
@@ -35,10 +35,6 @@ exports.registerUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
-  const Users = {
-    email:'ali12345@gmail.com',
-    password:'ali12345'
-  }
 
   try {
 
