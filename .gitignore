@@ -1,1 +1,7 @@
-linked to .env
+# Ignore node_modules
+node_modules/
+
+# Ignore environment files
+.env
+/server/.env
+/client/.env
