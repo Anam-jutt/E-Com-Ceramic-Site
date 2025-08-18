@@ -14,7 +14,7 @@ npm run dev
 
 ### Step 2: Start the Backend (Node + Express)```bash
 
-cd client
+cd server
 npm install
 npm run dev
 

@@ -14,10 +14,10 @@ import MostUseComponent from "../../components/MostUseComponent";
 const HomePage = () => {
   return (
     <div className="">
-      <div className="flex lg:flex-row md:flex:row sm:flex-row flex-col h-screen pt-10 justify-between text-white pb-10 siteBColor px-6 sm:px-12 md:px-20 overflow-hidden">
+      <div className="flex lg:flex-row md:flex:col sm:flex-col flex-col h-screen pt-10 justify-between text-white pb-10 siteBColor px-6 sm:px-12 md:px-20 overflow-hidden">
         {/* Left Side */}
-        <div className="w-full md:w-1/2 md:text-left flex flex-col pt-10 h-auto">
-          <p className="text-xl sm:text-2xl md:text-[20px] mb-2">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center h-auto">
+          <p className="text-lg sm:text-xl md:text-[20px] mb-2">
             WELCOME TO CERAMIC SHOP
           </p>
 
@@ -40,7 +40,7 @@ const HomePage = () => {
         </div>
 
         {/* Right Side */}
-        <div className="w-full h-[93%] overflow-hidden md:w-1/2 flex justify-center md:justify-end items-center relative ">
+        <div className="w-full h-[93%] overflow-hidden lg:w-1/2 flex justify-center md:justify-end items-center relative ">
           <img
             src={image1}
             alt="main product"
@@ -136,10 +136,6 @@ const HomePage = () => {
                 Explore our exquisite collection of ceramic treasures that
                 elevate your spaces and celebrate the artistry of craftsmanship.
                 From dinnerware to decor, each piece in our product range is a
-                testament to quality, style, and the timeless beauty of
-                ceramics.
-                 From dinnerware to decor, each piece in our product range is a
-                testament to quality, style, and the timeless beauty of
                 testament to quality, style, and the timeless beauty of
                 ceramics.
               </p>
