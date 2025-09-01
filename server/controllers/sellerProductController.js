@@ -1,7 +1,7 @@
 const Product = require('../models/Product');
 
-// @route   POST /api/seller/products
-// @access  Private (Seller only)
+// route   POST /api/seller/products
+// access  Private (Seller only) 
 exports.createSellerProduct = async (req, res) => {
   try {
     if (req.user.role !== 'seller') {

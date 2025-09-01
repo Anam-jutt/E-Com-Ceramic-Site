@@ -1,3 +1,4 @@
+// RedirectIfAuthenticated component (for protecting routes like login and signup)
 import { Navigate } from "react-router-dom";
 import useAuthStore from "../store/useAuthStore";
 

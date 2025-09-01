@@ -36,7 +36,7 @@ const ProductFormPage = () => {
 
     try {
       if (isEdit) {
-        await updateProduct(id, product, token); // make sure this also uses token
+        await updateProduct(id, product, token); // this also uses token
         alert("Product updated!");
       } else {
         await createProduct(product, token);
@@ -127,7 +127,7 @@ const ProductFormPage = () => {
               Available Sizes:
             </label>
             <div className="flex flex-wrap gap-3">
-              {["S", "M", "L", "XL"].map((size) => (
+              {["XS", "S", "M", "L", "XL", "XXL"].map((size) => (
                 <label key={size} className="flex items-center gap-2">
                   <input
                     type="checkbox"
@@ -151,7 +151,7 @@ const ProductFormPage = () => {
               Colors:
             </label>
             <div className="flex flex-wrap gap-3">
-              {["Red", "Blue", "Green", "Black", "White"].map((color) => (
+              {["Red", "Blue", "Green", "Black", "White", "Yellow", "Purple", "Pink", "Orange", "Brown",].map((color) => (
                 <label key={color} className="flex items-center gap-2">
                   <input
                     type="checkbox"

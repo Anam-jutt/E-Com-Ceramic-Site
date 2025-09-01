@@ -5,7 +5,6 @@ exports.uploadMultipleImages = (req, res) => {
 
   const baseUrl = `${req.protocol}://${req.get('host')}`;
   const imageUrls = req.files.map(file => `${baseUrl}/uploads/${file.filename}`);
-
   res.status(200).json({ imageUrls });
 };
 

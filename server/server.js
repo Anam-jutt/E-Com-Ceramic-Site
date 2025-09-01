@@ -19,14 +19,14 @@ const uploadRoutes = require('./routes/uploadRoutes');
 const app = express();
 
 
-// CORS middleware come before routes
+// CORS middleware
 app.use(cors({
   origin: 'http://localhost:5173',
   credentials: true
 }));
 
 
-// JSON parser middleware before routes
+// JSON parser middleware
 app.use(express.json());
 
 
@@ -46,6 +46,7 @@ app.use('/uploads', express.static('uploads'));
 app.use('/api/upload', uploadRoutes);
 
 
+// Health check endpoint
 app.get('/', (req, res) => {
   res.send('API is running...');
 });

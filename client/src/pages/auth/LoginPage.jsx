@@ -57,7 +57,7 @@ const Login = () => {
             value={form.email}
             onChange={handleChange}
             placeholder="you@example.com"
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-400 transition"
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 transition"
             required
           />
         </div>
@@ -71,7 +71,7 @@ const Login = () => {
             value={form.password}
             onChange={handleChange}
             placeholder="••••••••"
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-400 transition"
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 transition"
             required
           />
         </div>

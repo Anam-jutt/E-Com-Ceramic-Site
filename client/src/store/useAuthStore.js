@@ -5,8 +5,8 @@ let logoutTimer;
 
 const useAuthStore = create((set) => ({
   token: localStorage.getItem("token") || null,
-  role: localStorage.getItem("role") || null,
-  user: JSON.parse(localStorage.getItem("user")) || null,
+  role : localStorage.getItem("role") || null,
+  user : JSON.parse(localStorage.getItem("user")) || null,
 
   login: ({ token, role, user }) => {
     localStorage.setItem("token", token);
