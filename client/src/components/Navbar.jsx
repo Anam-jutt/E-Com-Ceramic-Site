@@ -81,15 +81,12 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
-          {token && role === "buyer" &&(
-                         <li style={{listStyle:"none"}}>
-                <Link
-                  to="/cart"
-                  className="hover:scale-110 focus:font-bold"
-                >
-                 View Cart
-                </Link>
-              </li>
+          {token && role === "buyer" && (
+            <li style={{ listStyle: "none" }}>
+              <Link to="/cart" className="hover:scale-110 focus:font-bold">
+                View Cart
+              </Link>
+            </li>
           )}
           {token && role === "seller" && (
             <>
@@ -132,7 +129,7 @@ const Navbar = () => {
             windowWidth >= 768 ? "flex" : "hidden"
           } gap-7 items-center`}
         >
-             {token && role === "buyer" && (
+          {token && role === "buyer" && (
             <>
               {/* Cart Icon */}
               <button
@@ -144,7 +141,7 @@ const Navbar = () => {
                   {totalItems}
                 </sup>
               </button>
-             
+
               {/* Drawer Component */}
               <CartDrawer
                 isOpen={drawerOpen}
@@ -177,8 +174,6 @@ const Navbar = () => {
               Logout
             </button>
           )}
-
-       
         </div>
 
         {/* Mobile Menu Button */}
