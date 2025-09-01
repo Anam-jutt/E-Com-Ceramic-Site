@@ -81,7 +81,16 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
-
+          {token && role === "buyer" &&(
+                         <li style={{listStyle:"none"}}>
+                <Link
+                  to="/cart"
+                  className="hover:scale-110 focus:font-bold"
+                >
+                 View Cart
+                </Link>
+              </li>
+          )}
           {token && role === "seller" && (
             <>
               <li>
@@ -125,14 +134,6 @@ const Navbar = () => {
         >
              {token && role === "buyer" && (
             <>
-             <li style={{listStyle:"none"}}>
-                <Link
-                  to="/cart"
-                  className="hover:scale-110 focus:font-bold"
-                >
-                 View Cart
-                </Link>
-              </li>
               {/* Cart Icon */}
               <button
                 onClick={() => setDrawerOpen(true)}
